@@ -118,6 +118,7 @@ $buttons = array(
   "&time;"            => "&time",
   "&now;"             => "&now",
   "&lastmod;"         => "&lastmod",
+  "&size(12){&color(white,orange){&nbsp;参考&nbsp;};};" => "参考",
   // icon
   "&heart;"    => "&lastmod",
   "&smile;"    => "&smile",
