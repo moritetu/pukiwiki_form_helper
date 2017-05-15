@@ -119,6 +119,12 @@ $buttons = array(
   "&now;"             => "&now",
   "&lastmod;"         => "&lastmod",
   "&size(12){&color(white,orange){&nbsp;参考&nbsp;};};" => "参考",
+  "&size(12){&color(white,orange){&nbsp;注意&nbsp;};};" => "注意",
+  "&size(12){&color(white,red){&nbsp;警告&nbsp;};};"    => "警告",
+  "&size(12){&color(white,dodgerblue){&nbsp;メモ&nbsp;};};" => "メモ",
+  "&size(12){&color(white,green){&nbsp;OK&nbsp;};};" => "OK",
+  "&size(12){&color(white,red){&nbsp;NG&nbsp;};};" => "NG",
+  "&size(12){&color(white,#00afcc){&nbsp;サンプル&nbsp;};};" => "サンプル",
   // icon
   "&heart;"    => "&lastmod",
   "&smile;"    => "&smile",
@@ -136,12 +142,15 @@ $buttons = array(
   "#geshi(java){{\n@text@\n}}" => "java",
   "#geshi(javascript){{\n@text@\n}}" => "javascript",
   "#geshi(xml){{\n@text@\n}}"   => "xml",
+  "#geshi(c){{\n@text@\n}}"     => "c",
   "#geshi(cpp){{\n@text@\n}}"   => "cpp",
   "#geshi(bash){{\n@text@\n}}"  => "Bash",
   "#geshi(sql){{\n@text@\n}}"   => "SQL",
   // pre, code
   "#pre{{\n@text@\n}}"  => "pre{}",
   "#code{{\n@text@\n}}" => "code{}",
+  // others
+  "- [[@text@>https://doxygen.postgresql.org/@text@_source.html]] - on doxygen.postgresql.org" => "LinkPGDoxygen",
 );
 
 

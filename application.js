@@ -8,12 +8,6 @@
       ;
 
       var text = $textarea.val().substring(pos_s, pos_e);
-      // raw_text.split("\n").forEach(function(val, index) {
-      //        var line = val.trim();
-      //        if (line.length == 0) return;
-      //        text.push(line);
-      // });
-      // text = text.join("\n");
       var data_text = $(this).attr("data-text").replace(/@text@/g, text);
 
       if (data_text.indexOf("@func") == 0) {
@@ -25,15 +19,11 @@
       }
 
       data_text = data_text.replace(/^ +/, "").replace(/ +$/, "");
-      if (pos_e > 0 && text) {
-        var _value = "", len = text.length;
-        _value += value.substring(0, pos_s);
-        _value += data_text;
-        _value += value.substring(pos_e);
-        $textarea.val(_value);
-      } else {
-        $textarea.val(value + data_text);
-      }
+      var _value = "";
+      _value += value.substring(0, pos_s);
+      _value += data_text;
+      _value += value.substring(pos_e);
+      $textarea.val(_value);
     });
 
     function insert_contents(text) {
