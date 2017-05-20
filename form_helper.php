@@ -148,19 +148,19 @@ $buttons = array(
   "&worried;"  => "&worried",
   // geshi
   "===== geshi =====" => "",
-  "#geshi{{\n@text@\n}}"       => "#geshi()",
-  "#geshi(ruby){{\n@text@\n}}" => "ruby",
-  "#geshi(php){{\n@text@\n}}"  => "php",
-  "#geshi(java){{\n@text@\n}}" => "java",
-  "#geshi(javascript){{\n@text@\n}}" => "javascript",
-  "#geshi(xml){{\n@text@\n}}"   => "xml",
-  "#geshi(c){{\n@text@\n}}"     => "c",
-  "#geshi(cpp){{\n@text@\n}}"   => "cpp",
-  "#geshi(bash){{\n@text@\n}}"  => "Bash",
-  "#geshi(sql){{\n@text@\n}}"   => "SQL",
+  "#geshi{{{\n@text@\n}}}"       => "#geshi()",
+  "#geshi(ruby){{{\n@text@\n}}}" => "ruby",
+  "#geshi(php){{{\n@text@\n}}}"  => "php",
+  "#geshi(java){{{\n@text@\n}}}" => "java",
+  "#geshi(javascript){{{\n@text@\n}}}" => "javascript",
+  "#geshi(xml){{{\n@text@\n}}}"   => "xml",
+  "#geshi(c){{{\n@text@\n}}}"     => "c",
+  "#geshi(cpp){{{\n@text@\n}}}"   => "cpp",
+  "#geshi(bash){{{\n@text@\n}}}"  => "Bash",
+  "#geshi(sql){{{\n@text@\n}}}"   => "SQL",
   // pre, code
-  "#pre{{\n@text@\n}}"  => "pre{}",
-  "#code{{\n@text@\n}}" => "code{}",
+  "#pre{{{\n@text@\n}}}"  => "pre{}",
+  "#code{{{\n@text@\n}}}" => "code{}",
   "@func:create_list(text, '// ')" => "コメント",
   "===== postgresql ====="  => "",
   // others
@@ -168,7 +168,7 @@ $buttons = array(
   " [[@text1@>@text2@]] - on doxygen.postgresql.org" => "pg_doclink2",
   // mathjax
   "===== mathjax ====="  => "",
-  "#mathjax{{\n@text@\n}}" => "#mathjax",
+  "#mathjax{{{\n@text@\n}}}" => "#mathjax",
   "&mathjax(){@text@};"    => "&mathjax",
 );
 
