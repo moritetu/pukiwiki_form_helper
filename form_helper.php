@@ -118,7 +118,11 @@ $buttons = array(
   "&time;"            => "&time",
   "&now;"             => "&now",
   "&lastmod;"         => "&lastmod",
+  "&br;"              => "&br;",
+  "@func:line_break_in_cell(text)" => "cell(&br;)",
+  " &size(12){&color(white,dimgray){&nbsp;duplicate&nbsp;};}; " => "duplicate",
   "&size(12){&color(white,orange){&nbsp;参考&nbsp;};};" => "参考",
+  "&size(12){&color(white,orange){&nbsp;関連&nbsp;};};" => "関連",
   "&size(12){&color(white,orange){&nbsp;注意&nbsp;};};" => "注意",
   "&size(12){&color(white,red){&nbsp;警告&nbsp;};};"    => "警告",
   "&size(12){&color(white,dodgerblue){&nbsp;メモ&nbsp;};};" => "メモ",
@@ -150,7 +154,8 @@ $buttons = array(
   "#pre{{\n@text@\n}}"  => "pre{}",
   "#code{{\n@text@\n}}" => "code{}",
   // others
-  "- [[@text@>https://doxygen.postgresql.org/@text@_source.html]] - on doxygen.postgresql.org" => "LinkPGDoxygen",
+  " [[@text@>https://doxygen.postgresql.org/@text@_8c_source.html]] - on doxygen.postgresql.org" => "pg_doclink",
+  " [[@text1@>@text2@]] - on doxygen.postgresql.org" => "pg_doclink2",
 );
 
 
