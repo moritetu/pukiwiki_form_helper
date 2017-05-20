@@ -65,9 +65,13 @@ function form_helper_html(array $buttons, $line_break = 15)
   $body = '<hr>';
   $i = 0;
   foreach ($buttons as $code => $text) {
+    if (strlen($code) === 0 || strlen($text) === 0) {
+      $body .= '<hr>';
+      continue;
+    }
     $body .= sprintf('<button class="btn btn-sm btn-default" type="button" data-text="%s">%s</button>', $code, $text);
     $i++;
-    if ($i % $line_break === 0) {
+    if ($line_break != 0 && ($i % $line_break === 0)) {
       $body .= '<hr>';
     }
   }
@@ -92,7 +96,8 @@ $buttons = array(
   "|~head1|~head2|h|body1|body2|"     => "|表|",
   "#comment"                          => "#comment",
   "#article"                          => "#article",
-  ": 定義 | 説明"                       => ":a|b",
+  "===== sub ====="                   => "",
+  ": 定義 | 説明"                     => ":a|b",
   "''@text@''"                        => "B",
   "'''@text@'''"                      => "I",
   "%%@text@%%"                        => "取消線",
@@ -105,6 +110,7 @@ $buttons = array(
   "RIGHT:@text@"                      => "RIGHT:",
   "#clear"                            => "#clear",
   // sub
+  "===== sub2 ====="  => "",
   "&size(){@text@};"  => "&size",
   "&color(){@text@};" => "&color",
   "&code(@text@);"    => "&code",
@@ -120,6 +126,7 @@ $buttons = array(
   "&lastmod;"         => "&lastmod",
   "&br;"              => "&br;",
   "@func:line_break_in_cell(text)" => "cell(&br;)",
+  "===== tag =====" => "",
   " &size(12){&color(white,dimgray){&nbsp;duplicate&nbsp;};}; " => "duplicate",
   "&size(12){&color(white,orange){&nbsp;参考&nbsp;};};" => "参考",
   "&size(12){&color(white,orange){&nbsp;関連&nbsp;};};" => "関連",
@@ -130,6 +137,7 @@ $buttons = array(
   "&size(12){&color(white,red){&nbsp;NG&nbsp;};};" => "NG",
   "&size(12){&color(white,#00afcc){&nbsp;サンプル&nbsp;};};" => "サンプル",
   // icon
+  "===== icon =====" => "",
   "&heart;"    => "&lastmod",
   "&smile;"    => "&smile",
   "&bigsmile;" => "&bigsmile",
@@ -138,8 +146,8 @@ $buttons = array(
   "&wink;"     => "&wink",
   "&sad;"      => "&sad",
   "&worried;"  => "&worried",
-  "@func:create_list(text, '// ')" => "コメント",
   // geshi
+  "===== geshi =====" => "",
   "#geshi{{\n@text@\n}}"       => "#geshi()",
   "#geshi(ruby){{\n@text@\n}}" => "ruby",
   "#geshi(php){{\n@text@\n}}"  => "php",
@@ -153,10 +161,16 @@ $buttons = array(
   // pre, code
   "#pre{{\n@text@\n}}"  => "pre{}",
   "#code{{\n@text@\n}}" => "code{}",
+  "@func:create_list(text, '// ')" => "コメント",
+  "===== postgresql ====="  => "",
   // others
   " [[@text@>https://doxygen.postgresql.org/@text@_8c_source.html]] - on doxygen.postgresql.org" => "pg_doclink",
   " [[@text1@>@text2@]] - on doxygen.postgresql.org" => "pg_doclink2",
+  // mathjax
+  "===== mathjax ====="  => "",
+  "#mathjax{{\n@text@\n}}" => "#mathjax",
+  "&mathjax(){@text@};"    => "&mathjax",
 );
 
 
-return form_helper_html($buttons);
+return form_helper_html($buttons, 0);
